@@ -23,7 +23,7 @@
 
 #section("Motorstart", color: colors.engine)[
   #step("Außentemperatur", "-10 bis 50°C")
-  #comment("Motor bei unter 10°C vorwärmen")
+  #comment("Motor bei unter -10°C vorwärmen")
   #step("Öltemperatur", "über -20°C")
   #step("Rettungssystem", "Entsichert")
   #step("Master", "Ein")
@@ -37,8 +37,9 @@
   #step("Gashebel", "nach Öltemperatur")
   #comment([10°C → 40% ~ 0°C → 45% ~ -5°C → 50% #linebreak() -10°C → 55% ~ -15°C → 60%])
   #step("Starter", "Drücken")
-  #comment([max. 10s → 2 Minuten warten])
-  #step("Gashebel", "2000 RPM")
+  #comment([max. 10s → sonst 2 Minuten warten])
+  #step("Gashebel", "2000 RPM (bzw. ruhiger lauf)")
+  #comment([max. 2500 RPM])
   #step("Start Power", "Aus")
   #step("Flight Instruments", "Ein")
   #step("Avionic", "Ein")
