@@ -4,30 +4,30 @@
 
 #show: checklist.with(aircraft: aircraft)
 
-#section("Vorflugkontrolle", color: colors.preflight)[
+#section("Vorflugkontrolle", color: colors.preflight, line-height: 1.7em)[
   #step("Benzintanks", "Drainen")
   #step("Lane A/B", "Aus")
   #step("Parkbremse", "Gesetzt")
   #step("Benzinvorrat", "Geprüft")
+  #step("Bugradgabel", "Entfernt")
   #step("Propeller", "Geprüft")
   #step("Ölstand", "Geprüft")
   #step("Kühlmittelstand", "Geprüft")
+  #step("Pitotrohr", "Abdeckung entfernt")
   #step("Steuerung", "Freigängig")
   #step("Klappen", "Geprüft")
-  #step("Pitotrohr", "Abdeckung entfernt")
-  #step("Bugradgabel", "Entfernt")
   #step("Seitenruderpedale", "Eingestellt")
   #step("Gurte", "Angelegt")
-  #step("Haube", "Verriegelt")
 ]
 
-#section("Motorstart", color: colors.engine)[
+#section("Motorstart", color: colors.engine, line-height: 1.7em)[
   #step("Außentemperatur", "-10 bis 50°C")
   #comment("Motor bei unter -10°C vorwärmen")
   #step("Öltemperatur", "über -20°C")
   #step("Rettungssystem", "Entsichert")
   #step("Master", "Ein")
   #step("EFIS", "Ein")
+  #step("Haube", "Verriegelt")
   #step("Start Power", "Ein")
   #step("Lane A/B", "Ein")
   #step("Warnlampen A/B", "Aus")
@@ -38,22 +38,11 @@
   #comment([10°C → 40% ~ 0°C → 45% ~ -5°C → 50% #linebreak() -10°C → 55% ~ -15°C → 60%])
   #step("Starter", "Drücken")
   #comment([max. 10s → sonst 2 Minuten warten])
-  #step("Gashebel", "2000 RPM (bzw. ruhiger lauf)")
-  #comment([max. 2500 RPM])
+  #step("Gashebel", "2000 RPM")
+  #comment([bzw. ruhiger Lauf, max. 2500 RPM])
   #step("Start Power", "Aus")
   #step("Flight Instruments", "Ein")
   #step("Avionic", "Ein")
-]
-
-#section("Warmlauf", color: colors.engine)[
-  #step("Gashebel", "2500 RPM")
-  #step("Höhenmesser", "Eingestellt")
-  #step("Funk", "Eingestellt")
-  #step("Transponder", "VFR / 7000 / ALT")
-  #step("Klappen", "Geprüft")
-  #step("Sicherungen", "Geprüft")
-  #step("Öltemperatur", "50°C erreicht")
-  #step("Gashebel", "2000 RPM")
 ]
 
 #section("Rollen", color: colors.engine)[
@@ -63,17 +52,28 @@
   #step("Bremsen", "Geprüft")
 ]
 
+#section("Warmlauf", color: colors.engine)[
+  #step("Gashebel", "max. 2500 RPM")
+  #step("Höhenmesser", "Eingestellt")
+  #step("Funk", "Eingestellt")
+  #step("Transponder", "VFR / 7000 / ALT")
+  #step("Klappen", "Geprüft")
+  #step("Sicherungen", "Geprüft")
+  #step("Öltemperatur", "50°C erreicht")
+]
+
 #section("Motortest", color: colors.engine)[
   #step("Parkbremse", "Gesetzt")
   #step("Temperaturen", "Grüner Bereich")
   #step("Gashebel", "2500 RPM")
   #step("Lane A", "Geprüft")
   #step("Lane B", "Geprüft")
-  #comment("min. 15s warten / max. 250 RPM Abfall")
+  #comment("jeweils min. 15s warten / max. 250 RPM Abfall")
   #step("AUX Pump", "Ein")
   #step("Main Pump", "Aus")
   #step("Kraftstoffdruck", "Grüner Bereich")
   #step("Main Pump", "Ein")
+  #step("Gashebel", "2000 RPM")
 ]
 
 #show: checklist.with(aircraft: aircraft)
@@ -99,7 +99,7 @@
   #step("Drehzahl", "Geprüft")
   #step("Abheben", "90 km/h")
   #step("Steigflug", "120 km/h")
-  #step("Klappen",  [Einfahren ab 150ft AGL])
+  #step("Klappen", [Einfahren ab 150ft AGL])
   #step("Geschwindigkeit", [V#sub[Y] 148 km/h / V#sub[X] 128 km/h])
   #comment([V#sub[Y] (best rate of climb) / V#sub[X] (best angle of climb)])
 ]
@@ -109,7 +109,6 @@
   #comment("max. 5800 RPM / 5500 RPM (dauerhaft)")
   #step("Trimmung", "nach Bedarf")
   #step("Instrumente", "Grüner Bereich")
-  #step("AUX Pump", "Aus")
   #step("Tankwahlschalter", "Vollerer Tank")
   #comment("Alle 20 Minuten wechseln")
 ]
@@ -142,7 +141,7 @@
   #step("Gashebel", "Vollgas")
   #step("Geschwindigkeit", "130 km/h")
   #step("Klappen", "10°")
-  #step("",  [Einfahren ab 150ft AGL])
+  #step("", [Einfahren ab 150ft AGL])
   #step("Geschwindigkeit", "148 km/h")
 ]
 
